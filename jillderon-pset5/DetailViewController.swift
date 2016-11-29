@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SQLite
 
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
+    @IBOutlet weak var TableView: UITableView!
+    @IBOutlet weak var textfieldNewToDo: UITextField!
 
     func configureView() {
         // Update the user interface for the detail item.

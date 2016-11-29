@@ -38,6 +38,18 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(_ sender: Any) {
+        
+        // Cited from Oscar Swanros at: http://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift
+        let alert = UIAlertController(title: "New Todo List", message: "Enter a name for todo list", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addTextField { (textField) in
+            textField.text = ""
+            textField.placeholder = "Type a todo list"
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         objects.insert(NSDate(), at: 0)
         let indexPath = IndexPath(row: 0, section: 0)
         self.tableView.insertRows(at: [indexPath], with: .automatic)
